@@ -1,0 +1,100 @@
+.promo-offers {
+  background: #fff;
+  padding: 60px 48px 90px;
+}
+
+.promo-offers-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.promo-tile {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  border-radius: 24px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.promo-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.82) 0%, rgba(10, 10, 10, 0.55) 38%, rgba(10, 10, 10, 0.1) 68%);
+}
+
+.promo-tile-icon {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+}
+
+.promo-tile-content {
+  position: relative;
+  z-index: 1;
+  max-width: 380px;
+}
+
+.promo-tile-content h3 {
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.promo-tile-content p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.promo-tile-btn {
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.promo-tile-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .promo-offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-tile {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 640px) {
+  .promo-offers {
+    padding: 48px 20px 70px;
+  }
+
+  .promo-tile-content {
+    max-width: 100%;
+  }
+}

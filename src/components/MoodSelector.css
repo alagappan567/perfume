@@ -1,0 +1,207 @@
+.mood-selector {
+  position: relative;
+  background: #1a1a1a;
+  padding: 70px 48px;
+}
+
+.mood-selector-top-wave {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: block;
+}
+
+.mood-selector-header {
+  max-width: 1400px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.mood-selector-kicker {
+  display: block;
+  color: #4caf50;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.mood-selector-header h2 {
+  color: #fff;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+}
+
+.mood-selector-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.02rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+}
+
+.mood-selector.is-in-view .mood-selector-kicker,
+.mood-selector.is-in-view .mood-selector-header h2,
+.mood-selector.is-in-view .mood-selector-header p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mood-options {
+  display: flex;
+  align-items: stretch;
+  max-width: 1400px;
+  height: 460px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.mood-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  min-width: 60px;
+  min-height: 100px;
+  margin: 0;
+  background-color: #101010;
+  background-position: center;
+  border: 2px solid #292929;
+  cursor: pointer;
+  transition: flex-grow 0.7s ease, box-shadow 0.7s ease, background-size 0.7s ease,
+    border-color 0.4s ease, opacity 0.7s ease, transform 0.7s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mood-option.is-active {
+  border-color: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.mood-option-shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  height: 120px;
+  pointer-events: none;
+  transition: bottom 0.7s ease, box-shadow 0.7s ease;
+  box-shadow: inset 0 -120px 0px -120px #000, inset 0 -120px 0px -80px #000;
+}
+
+.mood-option.is-active .mood-option-shadow {
+  bottom: 0;
+  box-shadow: inset 0 -120px 120px -120px #000, inset 0 -120px 120px -80px #000;
+}
+
+.mood-option-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 48px;
+  padding: 0 16px;
+  gap: 12px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.mood-option-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(32, 32, 32, 0.85);
+  backdrop-filter: blur(10px);
+  border: 2px solid #444;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.mood-icon-svg {
+  color: #fff;
+}
+
+.mood-option-info {
+  color: #fff;
+  white-space: pre;
+  position: relative;
+}
+
+.mood-option-title,
+.mood-option-sub {
+  opacity: 0;
+  transform: translateX(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.mood-option.is-active .mood-option-title,
+.mood-option.is-active .mood-option-sub {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mood-option-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.mood-option-sub {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 900px) {
+  .mood-selector {
+    padding: 60px 24px;
+  }
+
+  .mood-options {
+    height: 400px;
+  }
+
+  .mood-selector-header h2 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .mood-options {
+    height: 560px;
+    flex-direction: column;
+  }
+
+  .mood-option {
+    flex: 1 1 0% !important;
+  }
+
+  .mood-option.is-active {
+    flex: 5 1 0% !important;
+  }
+
+  .mood-option-info {
+    white-space: normal;
+  }
+
+  .mood-option-label {
+    padding-right: 20px;
+  }
+}

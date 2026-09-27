@@ -1,0 +1,376 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero-circle--left {
+  width: 62vw;
+  height: 62vw;
+  max-width: 900px;
+  max-height: 900px;
+  left: -18vw;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.hero-circle--right {
+  width: 46vw;
+  height: 46vw;
+  max-width: 680px;
+  max-height: 680px;
+  right: -6vw;
+  top: 50%;
+  translate: 0 -50%;
+  opacity: 0.35;
+}
+
+.hero-main {
+  position: relative;
+  z-index: 5;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  padding-top: 24px;
+}
+
+.hero-pills {
+  position: absolute;
+  top: 0;
+  right: 48px;
+  z-index: 15;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-pill {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-pill.is-current {
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-pill:hover {
+  transform: translateY(-2px);
+}
+
+.hero-body {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-text {
+  max-width: 560px;
+  flex-shrink: 0;
+}
+
+.hero-text h1 {
+  font-size: clamp(3.2rem, 4.6vw + 1.2rem, 4.6rem);
+  line-height: 1.08;
+  margin-bottom: 22px;
+}
+
+.hero-title-word {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title-leaf {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  transform: rotate(20deg);
+}
+
+.hero-text p {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  max-width: 460px;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.btn {
+  padding: 16px 30px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-cream {
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+}
+
+.hero-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.hero-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-arrow:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-nav-count {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.hero-right {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.hero-visual {
+  position: relative;
+  width: clamp(280px, 29vw, 480px);
+  max-height: 66vh;
+  aspect-ratio: 445 / 870;
+}
+
+.hero-visual-mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 600px 600px 44px 44px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+}
+
+.hero-scene-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-visual-bottle-layer {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  z-index: 20;
+}
+
+.hero-bottle-fly {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bottle-img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 100%;
+  width: auto;
+  /* Override the global img{max-width:100%} - it would clamp this image's
+     width to the (much narrower) arch container and, since height is
+     fixed, squash it out of its natural aspect ratio. The bottle layer has
+     overflow:visible specifically so it can render at its true proportions. */
+  max-width: none;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 26px 30px rgba(0, 0, 0, 0.4));
+  /* Source photos include the bottle's mirrored floor reflection below the
+     glass base (~84% down the frame) - crop it off so only the bottle shows. */
+  -webkit-clip-path: inset(0 0 15% 0);
+  clip-path: inset(0 0 15% 0);
+  /* `translate` handles centering above; `transform` is free for this idle
+     bob so the two compose instead of fighting over one property - and it
+     stays clear of the GSAP fly transform, which animates the parent
+     .hero-bottle-fly wrapper, not this image. */
+  animation: bottle-float 4.5s ease-in-out infinite;
+}
+
+@keyframes bottle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.hero-bottle-img.is-masked {
+  height: 108%;
+  -webkit-mask-image: radial-gradient(ellipse 19% 40% at 50% 47%, #000 58%, transparent 86%);
+  mask-image: radial-gradient(ellipse 19% 40% at 50% 47%, #000 58%, transparent 86%);
+}
+
+.hero-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-badge {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  padding: 6px;
+}
+
+.hero-badge span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.hero-badge-icon-leaf {
+  fill: #4caf50;
+}
+
+.hero-badge-icon-drop {
+  fill: #e6392f;
+}
+
+.hero-badge.is-purple .hero-badge-icon-leaf,
+.hero-badge.is-purple .hero-badge-icon-drop {
+  fill: none;
+  stroke: #6a5acd;
+  stroke-width: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .hero-circle--left {
+    max-width: 700px;
+    max-height: 700px;
+  }
+}
+
+@media (max-width: 860px), (max-height: 620px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 24px;
+  }
+
+  .hero-main {
+    padding-top: 88px;
+  }
+
+  .hero-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-pills {
+    top: 4px;
+    right: 50%;
+    translate: 50% 0;
+  }
+
+  .hero-right {
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .hero-visual {
+    width: clamp(240px, 60vw, 340px);
+  }
+
+  .hero-badges {
+    flex-direction: row;
+  }
+}

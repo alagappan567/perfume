@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-display: 'Caveat', cursive;
+  --font-body: 'Poppins', sans-serif;
+
+  --cream: #fff;
+  --text-dark: #1c1c1c;
+
+  --shadow-sm: 0 6px 16px rgba(0, 0, 0, 0.14);
+  --shadow-md: 0 14px 30px rgba(0, 0, 0, 0.2);
+  --shadow-lift: 0 20px 45px rgba(0, 0, 0, 0.28);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: #0f0f0f;
+  overflow-x: hidden;
+  padding-bottom: 46px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.social-icons-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.18);
+}

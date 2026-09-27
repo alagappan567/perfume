@@ -1,0 +1,127 @@
+.bestsellers {
+  background: #0f0f0f;
+  padding: 48px 48px 100px;
+}
+
+.bestsellers-top {
+  max-width: 1400px;
+  margin: 0 auto 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bestsellers-top h2 {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.bestsellers-viewall {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.25s ease;
+}
+
+.bestsellers-viewall:hover {
+  gap: 10px;
+}
+
+.bestsellers-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px 24px;
+}
+
+.bs-card {
+  position: relative;
+  background: #fff;
+  border-radius: 28px;
+  padding: 116px 20px 32px;
+  text-align: center;
+  overflow: visible;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.bs-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.26);
+  transform: translateY(-4px);
+}
+
+.bs-card-media {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bs-card-img {
+  height: 170px;
+  width: auto;
+  /* Override the global img{max-width:100%} so the bottle keeps its true
+     aspect ratio and can bleed above the card's own top edge. */
+  max-width: none;
+  -webkit-clip-path: inset(0 0 15% 0);
+  clip-path: inset(0 0 15% 0);
+  filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.35));
+}
+
+.bs-card-info {
+  padding: 0 2px;
+}
+
+.bs-card-price {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.bs-card-name {
+  font-size: 0.92rem;
+  color: #8a8a8a;
+  margin-bottom: 26px;
+}
+
+.bs-card-add {
+  padding: 11px 30px;
+  border-radius: 999px;
+  border: none;
+  background: var(--text-dark);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bs-card-add:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .bestsellers {
+    padding: 70px 20px 80px;
+  }
+
+  .bestsellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .bestsellers-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}

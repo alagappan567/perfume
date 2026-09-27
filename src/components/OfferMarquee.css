@@ -1,0 +1,63 @@
+.offer-marquee {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  background: #1c1108;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.offer-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: offer-scroll 26s linear infinite;
+}
+
+.offer-marquee:hover .offer-marquee-track {
+  animation-play-state: paused;
+}
+
+.offer-track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.offer-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #f3ece1;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.offer-dot {
+  color: #e0a951;
+  font-size: 0.7rem;
+}
+
+@keyframes offer-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-marquee-track {
+    animation: none;
+  }
+}

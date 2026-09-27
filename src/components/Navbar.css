@@ -1,0 +1,141 @@
+.navbar {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 48px 0;
+}
+
+.navbar-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.navbar-logo-dot {
+  color: #fff;
+}
+
+.navbar-logo-leaf {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  transform: rotate(20deg);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.navbar-link:hover {
+  color: #fff;
+}
+
+.navbar-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-icon-btn {
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.92;
+}
+
+.navbar-icon-btn:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.navbar-burger span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 24px 24px 0;
+  }
+
+  .navbar-burger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 10px;
+    display: none;
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+  }
+
+  .navbar-link {
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+  }
+}
